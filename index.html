@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículum - Antonio Martinez Andrade</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="cv-wrapper">
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar">
+      <div class="profile-photo">
+        <img src="foto.jpg" alt="Foto de perfil">
+      </div>
+      <h2 class="name">Antonio Martinez Andrade</h2>
+      <h3 class="role">Estudiante en Ingeniería de Software</h3>
+
+      <ul class="contact-info">
+        <li><i class="fas fa-envelope"></i> Correo personal/Institucional:</li>
+        <li><i class="fas fa-envelope"></i> tony12str@.com</li>
+        <li><i class="fas fa-envelope"></i> al22231293@gmail.com</li>
+        <li><i class="fas fa-phone"></i> Cel: 7224186372</li>
+        <li><i class="fas fa-map-marker-alt"></i> Otzolotepec, México</li>
+        <li><i class="fab fa-linkedin"></i> 
+          <a href="https://tonystark1.vercel.app/" target="_blank">
+            https://tonystark1.vercel.app/
+          </a>
+        </li>
+        <li><i class="fab fa-github"></i> 
+          <a href="https://github.com/tony12str" target="_blank">
+            https://github.com/tony12str
+          </a>
+        </li>
+      </ul>
+
+      <h3 class="section-title">Mis principales competencias</h3>
+      <ul class="competencias">
+        <li>Idiomas: Español (nativo), Inglés (básico)</li>
+        <li>Ideas para resolver problemas de programación</li>
+        <li>Adaptación a nuevas tecnologías y metodologías</li>
+        <li>Trabajo en equipo, fomentando la colaboración y el aprendizaje</li>
+      </ul>
+
+      <h3 class="section-title">Lenguajes y Tecnologías</h3>
+      <div class="skill-bar">
+        <p>Java | PHP | JS 40%</p>
+        <div class="bar"><div class="fill" style="width:40%"></div></div>
+      </div>
+      <div class="skill-bar">
+        <p>React.js | Node.js 40%</p>
+        <div class="bar"><div class="fill" style="width:40%"></div></div>
+      </div>
+      <div class="skill-bar">
+        <p>Laravel | Express 40%</p>
+        <div class="bar"><div class="fill" style="width:40%"></div></div>
+      </div>
+      <div class="skill-bar">
+        <p>MySQL | MongoDB 40%</p>
+        <div class="bar"><div class="fill" style="width:40%"></div></div>
+      </div>
+      <div class="skill-bar">
+        <p>Git & GitHub 60%</p>
+        <div class="bar"><div class="fill" style="width:60%"></div></div>
+      </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="content">
+      <section class="about">
+        <h2>Perfil Profesional</h2>
+        <p>
+          Soy un estudiante apasionado por crear soluciones de software innovadoras teniendo ideales 
+          de aplicar mis conocimientos básicos en programación y desarrollo
+          de software para contribuir al crecimiento de la empresa mientras adquiero experiencia
+          y mejoro mis habilidades. Trabajo en la mejora continua y la aplicación de buenas prácticas 
+          de programación.
+        </p>
+      </section>
+
+      <section class="education">
+        <h2>Educación</h2>
+        <div class="edu-item">
+          <h3>Ingeniería en Desarrollo y Gestión de Software</h3>
+          <span class="school">UTVT | 2025 - Actualidad</span>
+        </div>
+        <div class="edu-item">
+          <h3>TSU en Desarrollo de Software Multiplataforma</h3>
+          <span class="school">UTVT Lerma | 2023 - 2025</span>
+        </div>
+      </section>
+
+      <section class="experience">
+        <h2>Experiencia</h2>
+        <div class="exp-item">
+          <h3>Estudiante de TSU</h3>
+          <span class="company">Formación Académica</span>
+          <p>
+            En el trayecto de mi formación, desarrollé competencias sólidas en 
+            programación y desarrollo de software...
+          </p>
+        </div>
+        <div class="exp-item">
+          <h3>Desarrollador Jr.</h3>
+          <span class="company">Smart Site Mayo-Agosto 2025</span>
+          <p>
+            Participé en el desarrollo de un sistema POS CORE usando Node.js y Mongo DB...
+          </p>
+        </div>
+        <div class="exp-item">
+          <h3>Proyectos Académicos</h3>
+          <span class="company">Integradoras UTVT | 2023 - 2025</span>
+          <p>
+            - Biblioteca Virtual - HTML. <br>
+            - Aplicación IoT para gestión de estacionamientos con ESP32 - React y MySQL. <br>
+            - CRUD en Laravel para gestión escolar con MySQL.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROYECTOS -->
+      <section class="projects">
+        <h2>Proyectos Destacados</h2>
+        <p>Puedes ver mi portafolio completo de proyectos en el siguiente enlace:</p>
+        <a href="https://tuportafolio.com" target="_blank" class="btn-portfolio">Ver Portafolio</a>
+
+        <!-- BOTONES PARA DESCARGAR -->
+        <div style="margin-top:20px;">
+          <button onclick="downloadPDF()" class="btn-portfolio">Descargar PDF</button>
+          <button onclick="downloadImage()" class="btn-portfolio">Descargar Imagen</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- SCRIPTS PARA DESCARGAR -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <script>
+    function downloadPDF() {
+      const element = document.querySelector('.cv-wrapper');
+      html2pdf()
+        .from(element)
+        .set({
+          margin: 10,
+          filename: 'CV_AntonioMartinez.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        })
+        .save();
+    }
+
+    function downloadImage() {
+      const element = document.querySelector('.cv-wrapper');
+      html2canvas(element, { scale: 2 }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'CV_AntonioMartinez.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    }
+  </script>
+
+</body>
+</html>
