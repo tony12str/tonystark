@@ -71,6 +71,19 @@ body {
   color: #38bdf8;
 }
 
+/* LINKS de contacto */
+.contact-info a {
+  color: #38bdf8;          /* Azul claro */
+  text-decoration: none;   /* Sin subrayado */
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #facc15;          /* Amarillo en hover */
+  text-decoration: underline;
+}
+
 .section-title {
   margin: 20px 0 10px;
   font-size: 1.1rem;
